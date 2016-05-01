@@ -54,3 +54,7 @@ Step 3:
 Once the thread object is created, you can start it by calling start() method, which executes a call to the run() method.
 Following is a simple syntax of start() method:
 void start();
+
+CREATING THREAD BY EXTENDING THREAD CLASS
+The second way to create a thread is to create a new class that extends Thread class using the following two steps.
+This approach provides more flexibility in handling multiple threads created using available methods in Thread class.
