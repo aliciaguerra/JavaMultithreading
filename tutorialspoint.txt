@@ -17,3 +17,40 @@ dies.
 thread. It is also referred to as a thread.
 -Runnable: After a newly born thread is started, the thread becomes runnable. A thread in this state is
 considered to be executing its task.
+-Waiting: Sometimes a thread transitions to the waiting state while the thread waits for another thread
+to perform a task. A thread transitions back to the runnable state only when another thread signals the
+waiting thread to continue executing.
+-Timed Waiting: A runnable state can enter the timed waiting state for a specified interval of time. 
+A thread in this state transitions back to the runnable state when the time interval expires or when 
+the event it is waiting for occurs.
+-Terminated (Dead): A runnable thread enters the terminated state when it completes it task or otherwise 
+terminates.
+
+THREAD PRIORITIES:
+Every Java thread has a priority that helps the operating system determine the order in which threads are
+scheduled.
+Java thread priorities are in the range between MIN_PRIORITY (a constant of 1) and MAX_PRIORITY (a constant of 5).
+Threads with higher priorities are mor important to a program and should be allocated processor time before
+lower-level priority threads. However, thread priorities cannot guarantee the order in which threads execute and
+very much platform dependent.
+
+CREATE THREAD BY IMPLEMENTING RUNNABLE INTERFACE
+If your class is intended to be executed as a thread then you can achieve this by implementing Runnable interface.
+You will need to follow three basic steps:
+
+Step 1:
+As a first step, you need to implement a run() method provided by a Runnable interface. This method provides entry point
+for the thread and you will put your complete business logic inside this method. Following is simple syntax of the run()
+method.
+public void run()
+
+Step 2:
+As a second step, you will instantiate a Thread object using the following constructor:
+Thread(Runnable threadObj, String threadName);
+Where, threadObj is the instance of a class that implements the Runnable interface and threadName is the name given
+to the new thread.
+
+Step 3:
+Once the thread object is created, you can start it by calling start() method, which executes a call to the run() method.
+Following is a simple syntax of start() method:
+void start();
