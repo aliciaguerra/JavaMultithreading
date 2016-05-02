@@ -1,0 +1,15 @@
+If you are aware of interprocess communications, it will be easy to understand interthread communication. Interthread
+communication is important when you develop an application where two or more threads exchange information.
+There are simply three methods and a little trick which makes thread communication possible.
+
+public void wait()
+Causes the current thread to wait until another thread invokes notify().
+
+public void notify()
+Wakes up a single thread that is waiting on this object's monitor.
+
+public void notifyAll()
+Wakes up all the threads that called wait() on the same object.
+
+These methods have been implemented as final methods in object, so they are available in all classes. All
+three methods can only be called from a synchronized context.
